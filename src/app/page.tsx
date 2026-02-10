@@ -132,15 +132,13 @@ function BeforeAfter() {
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">See the Transformation</h2>
         <p className="mt-3 text-gray-500 text-lg">From phone snap to store-ready in seconds.</p>
         <div className="mt-14 grid md:grid-cols-2 gap-8">
-          <div className="rounded-2xl border-2 border-dashed border-gray-200 bg-gray-50 aspect-[4/3] flex flex-col items-center justify-center text-gray-400">
-            <CameraIcon />
-            <span className="mt-3 text-sm font-medium">Before — Raw product photo</span>
-            <span className="text-xs mt-1">Plain background, phone camera</span>
+          <div className="rounded-2xl overflow-hidden border-2 border-dashed border-gray-200 bg-gray-50 aspect-[4/3] relative">
+            <img src="/before.jpg" alt="Before — Raw product photo" className="w-full h-full object-cover" />
+            <span className="absolute bottom-3 left-3 bg-white/90 backdrop-blur text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Before — Raw product photo</span>
           </div>
-          <div className="rounded-2xl border-2 border-green-200 bg-green-50 aspect-[4/3] flex flex-col items-center justify-center text-green-600">
-            <SparklesIcon />
-            <span className="mt-3 text-sm font-medium">After — AI-generated scene</span>
-            <span className="text-xs mt-1">Professional lighting, styled environment</span>
+          <div className="rounded-2xl overflow-hidden border-2 border-green-200 bg-green-50 aspect-[4/3] relative">
+            <img src="/after.jpg" alt="After — AI-generated scene" className="w-full h-full object-cover" />
+            <span className="absolute bottom-3 left-3 bg-green-600/90 backdrop-blur text-white text-sm font-medium px-3 py-1 rounded-full">After — AI-generated scene</span>
           </div>
         </div>
       </div>
