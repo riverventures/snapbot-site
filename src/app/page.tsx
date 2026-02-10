@@ -131,12 +131,12 @@ function HowItWorks() {
 
 function Features() {
   const features = [
-    { title: "HD Exports", desc: "High-res images for web, social, and print." },
-    { title: "AI Backgrounds", desc: "Any environment — studio, outdoor, lifestyle." },
-    { title: "Quality Check", desc: "Evaluated for realism and accuracy." },
-    { title: "WhatsApp Delivery", desc: "Results sent directly to your chat." },
-    { title: "Regenerations", desc: "Not right? Request a new version." },
-    { title: "Under 30 Seconds", desc: "Most photos generated instantly." },
+    { icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" /></svg>, title: "HD Exports", desc: "High-res images for web, social, and print." },
+    { icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" /></svg>, title: "AI Backgrounds", desc: "Any environment — studio, outdoor, lifestyle." },
+    { icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>, title: "Quality Check", desc: "Evaluated for realism and accuracy." },
+    { icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" /></svg>, title: "WhatsApp Delivery", desc: "Results sent directly to your chat." },
+    { icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" /></svg>, title: "Regenerations", desc: "Not right? Request a new version." },
+    { icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>, title: "Under 30 Seconds", desc: "Most photos generated instantly." },
   ];
   return (
     <section id="features" className="py-10 px-6">
@@ -145,6 +145,7 @@ function Features() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
           {features.map((f, i) => (
             <div key={i} className="p-3 rounded-xl bg-gray-50 border border-gray-100">
+              <div className="text-gray-400 mb-1.5">{f.icon}</div>
               <h3 className="text-sm font-semibold text-gray-900">{f.title}</h3>
               <p className="text-xs text-gray-500 mt-0.5">{f.desc}</p>
             </div>
