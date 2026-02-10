@@ -71,7 +71,7 @@ function Hero() {
     <section className="pt-32 pb-20 px-6">
       <div className="max-w-3xl mx-auto text-center">
         <div className="inline-block mb-6 rounded-full bg-green-50 px-4 py-1.5 text-sm font-medium text-green-700">
-          7-day free trial · No credit card required
+          10 free photos · No credit card required
         </div>
         <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
           Professional Product Photos
@@ -200,7 +200,7 @@ function Pricing() {
     <section id="pricing" className="py-24 px-6">
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Simple Pricing</h2>
-        <p className="mt-3 text-gray-500 text-lg">7-day free trial. Cancel anytime.</p>
+        <p className="mt-3 text-gray-500 text-lg">10 free photo generations. No commitment.</p>
         <div className="mt-14 grid md:grid-cols-3 gap-8">
           {plans.map((p) => (
             <div
@@ -280,7 +280,7 @@ function FAQ() {
     { q: "How long does it take to get a photo?", a: "Most photos are generated in under 30 seconds and sent directly to your WhatsApp chat." },
     { q: "Can I use the photos for e-commerce?", a: "Absolutely. All images are commercially licensed and optimized for platforms like Shopify, Amazon, Etsy, and social media." },
     { q: "What if I don't like the result?", a: "Every plan includes regenerations. Just describe what you'd like changed and we'll generate a new version." },
-    { q: "Is there a free trial?", a: "Yes! Every plan comes with a 7-day free trial. No credit card required to start." },
+    { q: "Is there a free trial?", a: "Yes! You get 10 free photo generations to try the service. No credit card required." },
     { q: "Can I upload products in bulk?", a: "Bulk uploads are available on the Scale-Up plan. Send multiple products at once and get all photos back." },
   ];
   return (
@@ -305,7 +305,7 @@ function CTA() {
     <section className="py-24 px-6 bg-green-500">
       <div className="max-w-3xl mx-auto text-center text-white">
         <h2 className="text-3xl sm:text-4xl font-bold">Ready to Transform Your Product Photos?</h2>
-        <p className="mt-4 text-green-100 text-lg">Start your 7-day free trial. No credit card needed.</p>
+        <p className="mt-4 text-green-100 text-lg">Start with 10 free photos. No credit card needed.</p>
         <div className="mt-8">
           <a
             href={WA_LINK}
