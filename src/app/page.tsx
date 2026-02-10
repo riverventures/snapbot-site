@@ -179,7 +179,7 @@ function Pricing() {
       name: "Starter",
       price: "$29",
       popular: false,
-      features: ["Up to 100 photos / mo", "1 regeneration per photo", "HD exports", "AI backgrounds", "Email support"],
+      features: ["Up to 50 photos / mo", "2 regenerations per photo", "HD exports", "AI backgrounds", "Email support"],
     },
     {
       name: "Pro",
