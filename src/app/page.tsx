@@ -254,9 +254,9 @@ function Pricing() {
 
 function Testimonials() {
   const quotes = [
-    { name: "Sarah K.", role: "Etsy Seller", text: "I used to spend $50 per product photo at a studio. Now I get better results from my couch." },
-    { name: "James R.", role: "Shopify Owner", text: "Conversion rate went up 35% after switching to SnapBot photos." },
-    { name: "Priya M.", role: "Brand Manager", text: "200+ products a month. SnapBot saves us days of editing time." },
+    { name: "Sarah K.", role: "Etsy Seller", text: "I used to spend $50 per product photo at a studio. Now I get better results from my couch.", img: "https://randomuser.me/api/portraits/women/44.jpg" },
+    { name: "James R.", role: "Shopify Owner", text: "Conversion rate went up 35% after switching to SnapBot photos.", img: "https://randomuser.me/api/portraits/men/32.jpg" },
+    { name: "Priya M.", role: "Brand Manager", text: "200+ products a month. SnapBot saves us days of editing time.", img: "https://randomuser.me/api/portraits/women/63.jpg" },
   ];
   return (
     <section className="py-10 px-6">
@@ -267,7 +267,7 @@ function Testimonials() {
             <div key={q.name} className="rounded-xl p-4 bg-gray-50 border border-gray-100">
               <p className="text-sm text-gray-600 leading-relaxed">&ldquo;{q.text}&rdquo;</p>
               <div className="mt-3 flex items-center gap-2">
-                <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-[10px] font-bold text-green-600">{q.name[0]}</div>
+                <img src={q.img} alt={q.name} className="w-7 h-7 rounded-full object-cover" />
                 <div>
                   <p className="text-xs font-semibold text-gray-900">{q.name}</p>
                   <p className="text-[10px] text-gray-400">{q.role}</p>
