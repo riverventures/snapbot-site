@@ -1,4 +1,4 @@
-const WA_LINK = "https://wa.me/MESSAGE_PLACEHOLDER";
+const WA_LINK = "https://wa.me/17314727892?text=Hi%2C%20I'd%20like%20to%20try%20SnapBot";
 
 /* ─── Icons (inline SVG) ─── */
 const CameraIcon = () => (
