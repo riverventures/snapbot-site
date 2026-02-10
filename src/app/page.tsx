@@ -1,3 +1,6 @@
+"use client";
+import React from "react";
+
 const WA_LINK = "https://wa.me/17314727892?text=Hi%2C%20I'd%20like%20to%20try%20SnapBot";
 
 /* ─── Icons (inline SVG) ─── */
@@ -174,22 +177,26 @@ function Features() {
 }
 
 function Pricing() {
+  const [annual, setAnnual] = React.useState(true);
   const plans = [
     {
       name: "Starter",
-      price: "$29",
+      monthly: 29,
+      annual: 23,
       popular: false,
       features: ["Up to 50 photos / mo", "2 regenerations per photo", "HD exports", "AI backgrounds", "Email support"],
     },
     {
       name: "Pro",
-      price: "$79",
+      monthly: 79,
+      annual: 63,
       popular: true,
       features: ["Up to 500 photos / mo", "2 regenerations per photo", "Priority generation", "AI scene descriptions", "WhatsApp support"],
     },
     {
       name: "Scale-Up",
-      price: "$249",
+      monthly: 249,
+      annual: 199,
       popular: false,
       features: ["Up to 1,500 photos / mo", "3 regenerations per photo", "Bulk uploads", "Brand references upload", "Priority WhatsApp support"],
     },
@@ -199,7 +206,18 @@ function Pricing() {
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Simple Pricing</h2>
         <p className="mt-3 text-gray-500 text-lg">10 free photo generations. No commitment.</p>
-        <div className="mt-14 grid md:grid-cols-3 gap-8">
+        <div className="mt-8 flex items-center justify-center gap-3">
+          <span className={`text-sm font-medium ${!annual ? "text-gray-900" : "text-gray-400"}`}>Monthly</span>
+          <button
+            onClick={() => setAnnual(!annual)}
+            className={`relative inline-flex h-7 w-12 items-center rounded-full transition-colors ${annual ? "bg-green-500" : "bg-gray-300"}`}
+          >
+            <span className={`inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform ${annual ? "translate-x-6" : "translate-x-1"}`} />
+          </button>
+          <span className={`text-sm font-medium ${annual ? "text-gray-900" : "text-gray-400"}`}>Annual</span>
+          {annual && <span className="ml-1 rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-700">Save 20%</span>}
+        </div>
+        <div className="mt-10 grid md:grid-cols-3 gap-8">
           {plans.map((p) => (
             <div
               key={p.name}
@@ -216,9 +234,11 @@ function Pricing() {
               )}
               <h3 className="text-lg font-semibold text-gray-900">{p.name}</h3>
               <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-4xl font-extrabold text-gray-900">{p.price}</span>
+                {annual && <span className="text-lg text-gray-300 line-through mr-1">${p.monthly}</span>}
+                <span className="text-4xl font-extrabold text-gray-900">${annual ? p.annual : p.monthly}</span>
                 <span className="text-gray-400">/mo</span>
               </div>
+              {annual && <p className="mt-1 text-xs text-gray-400">Billed ${p.annual * 12}/year</p>}
               <ul className="mt-6 space-y-3">
                 {p.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
