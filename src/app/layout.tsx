@@ -5,9 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SnapBot — AI Product Photography via WhatsApp",
+  title: "Booth — Kill Expensive Product Photo Shoots",
   description:
-    "Send a product photo, describe the scene, get a professional product shot. No studio needed.",
+    "Studio-quality product photos in 30 seconds via WhatsApp. No studio, no photographer, no editing. Just results. trybooth.ai",
 };
 
 export default function RootLayout({

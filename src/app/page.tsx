@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 
-const WA_LINK = "https://wa.me/17314727892?text=Hi%2C%20I'd%20like%20to%20try%20SnapBot";
+const WA_LINK = "https://wa.me/17314727892?text=Hi%2C%20I'd%20like%20to%20try%20Booth";
+const COPPER = "#B76E5B";
 
 /* ─── Icons (inline SVG, compact) ─── */
 const CameraIcon = () => (
@@ -27,6 +28,36 @@ const WhatsAppIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
 );
 
+const XIcon = () => (
+  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+);
+
+const CheckIcon = () => (
+  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+  </svg>
+);
+
+const DollarIcon = () => (
+  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+);
+
+const ClockIcon = () => (
+  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+);
+
+const ArrowRightIcon = () => (
+  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+  </svg>
+);
+
 /* ─── Sections ─── */
 
 function Nav() {
@@ -34,9 +65,10 @@ function Nav() {
     <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
       <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-3">
         <span className="text-lg font-bold tracking-tight">
-          snap<span className="text-green-500">bot</span>
+          booth
         </span>
         <div className="hidden sm:flex items-center gap-6 text-sm text-gray-500">
+          <a href="#problem" className="hover:text-gray-900 transition-colors">Why Booth</a>
           <a href="#how-it-works" className="hover:text-gray-900 transition-colors">How It Works</a>
           <a href="#pricing" className="hover:text-gray-900 transition-colors">Pricing</a>
           <a href="#faq" className="hover:text-gray-900 transition-colors">FAQ</a>
@@ -45,7 +77,8 @@ function Nav() {
           href={WA_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full bg-green-500 px-4 py-1.5 text-sm text-white font-medium hover:bg-green-600 transition-colors"
+          className="rounded-full px-4 py-1.5 text-sm text-white font-medium hover:opacity-90 transition-opacity"
+          style={{ backgroundColor: COPPER }}
         >
           Try Free
         </a>
@@ -60,27 +93,30 @@ function Hero() {
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
         {/* Left: copy */}
         <div>
-          <div className="inline-block mb-4 rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700">
+          <div className="inline-block mb-4 rounded-full px-3 py-1 text-xs font-medium" style={{ backgroundColor: "rgba(183,110,91,0.1)", color: COPPER }}>
             10 free photos · No credit card
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 leading-[1.1]">
-            Product Photos
+            Kill Expensive
             <br />
-            <span className="text-green-500">via WhatsApp</span>
+            <span style={{ color: COPPER }}>Photo Shoots</span>
           </h1>
           <p className="mt-4 text-base text-gray-500 max-w-md leading-relaxed">
-            Send a product photo, describe the scene, get a studio-quality shot in seconds. No camera, no studio, no editing.
+            Stop renting studios and hiring photographers. WhatsApp a product photo, describe the scene, get studio-quality results in 30 seconds. ~$0.50/photo.
           </p>
           <div className="mt-6 flex items-center gap-4">
             <a
-              href="#pricing"
-              className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-2.5 text-white font-semibold text-sm hover:bg-green-600 transition-colors"
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-white font-semibold text-sm hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: COPPER }}
             >
               <WhatsAppIcon className="w-4 h-4" />
-              See Pricing
+              Start Free on WhatsApp
             </a>
-            <a href="#how-it-works" className="text-sm text-gray-400 hover:text-gray-600 font-medium transition-colors">
-              How it works ↓
+            <a href="#problem" className="text-sm text-gray-400 hover:text-gray-600 font-medium transition-colors">
+              See why ↓
             </a>
           </div>
         </div>
@@ -90,9 +126,68 @@ function Hero() {
             <img src="/before.jpg" alt="Before" className="w-full h-full object-cover" />
             <span className="absolute bottom-2 left-2 bg-white/90 backdrop-blur text-gray-600 text-[10px] font-medium px-2 py-0.5 rounded-full">Before</span>
           </div>
-          <div className="rounded-xl overflow-hidden border border-green-200 aspect-[3/4] relative">
+          <div className="rounded-xl overflow-hidden aspect-[3/4] relative" style={{ borderColor: COPPER, borderWidth: 1 }}>
             <img src="/after.jpg" alt="After" className="w-full h-full object-cover" />
-            <span className="absolute bottom-2 left-2 bg-green-600/90 backdrop-blur text-white text-[10px] font-medium px-2 py-0.5 rounded-full">After</span>
+            <span className="absolute bottom-2 left-2 backdrop-blur text-white text-[10px] font-medium px-2 py-0.5 rounded-full" style={{ backgroundColor: COPPER }}>After</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PainOfStatusQuo() {
+  const oldWay = [
+    { icon: <DollarIcon />, label: "Rent a studio", cost: "$500–2,000/day" },
+    { icon: <CameraIcon />, label: "Hire a photographer", cost: "$500–1,500/shoot" },
+    { icon: <ClockIcon />, label: "Stage products, lighting, props", cost: "Hours of setup" },
+    { icon: <ClockIcon />, label: "Wait for edited photos", cost: "Days to weeks" },
+  ];
+
+  return (
+    <section id="problem" className="py-10 px-6">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Product Photography is Broken</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          {/* Old way */}
+          <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
+            <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3">The Old Way</h3>
+            <div className="space-y-2.5">
+              {oldWay.map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <span className="text-gray-300 shrink-0">{item.icon}</span>
+                  <span className="text-sm text-gray-600 flex-1">{item.label}</span>
+                  <span className="text-xs font-semibold text-gray-400">{item.cost}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between">
+              <span className="text-sm font-bold text-gray-900">Total per shoot</span>
+              <span className="text-sm font-bold text-red-500">$2,000–5,000+ &middot; Days of work</span>
+            </div>
+          </div>
+
+          {/* Booth way */}
+          <div className="rounded-xl border-2 p-5" style={{ borderColor: COPPER, backgroundColor: "rgba(183,110,91,0.04)" }}>
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-3" style={{ color: COPPER }}>With Booth</h3>
+            <div className="space-y-2.5">
+              <div className="flex items-center gap-3">
+                <span style={{ color: COPPER }} className="shrink-0"><WhatsAppIcon /></span>
+                <span className="text-sm text-gray-700">WhatsApp a product photo</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span style={{ color: COPPER }} className="shrink-0"><ChatIcon /></span>
+                <span className="text-sm text-gray-700">Describe your scene in plain English</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span style={{ color: COPPER }} className="shrink-0"><SparklesIcon /></span>
+                <span className="text-sm text-gray-700">Studio-quality photo in 30 seconds</span>
+              </div>
+            </div>
+            <div className="mt-4 pt-3 border-t flex items-center justify-between" style={{ borderColor: "rgba(183,110,91,0.2)" }}>
+              <span className="text-sm font-bold text-gray-900">Cost per photo</span>
+              <span className="text-sm font-bold" style={{ color: COPPER }}>~$0.50 &middot; 30 seconds</span>
+            </div>
           </div>
         </div>
       </div>
@@ -102,7 +197,7 @@ function Hero() {
 
 function HowItWorks() {
   const steps = [
-    { icon: <CameraIcon />, title: "Send Photo", desc: "Snap your product and send it to our WhatsApp bot." },
+    { icon: <CameraIcon />, title: "Send Photo", desc: "Snap your product and send it to Booth on WhatsApp." },
     { icon: <ChatIcon />, title: "Describe Scene", desc: "Marble countertop, tropical beach, minimalist studio — you name it." },
     { icon: <SparklesIcon />, title: "Get Your Shot", desc: "Professional HD photo ready for your store in seconds." },
   ];
@@ -113,11 +208,11 @@ function HowItWorks() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {steps.map((s, i) => (
             <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
-              <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-green-100 text-green-600 shrink-0">
+              <div className="flex items-center justify-center w-9 h-9 rounded-lg shrink-0" style={{ backgroundColor: "rgba(183,110,91,0.1)", color: COPPER }}>
                 {s.icon}
               </div>
               <div>
-                <span className="text-[10px] font-bold text-green-500 uppercase tracking-wider">{i + 1}</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: COPPER }}>{i + 1}</span>
                 <h3 className="text-sm font-semibold text-gray-900">{s.title}</h3>
                 <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{s.desc}</p>
               </div>
@@ -217,26 +312,28 @@ function Pricing() {
             <span className={`text-xs font-medium ${!annual ? "text-gray-900" : "text-gray-400"}`}>Monthly</span>
             <button
               onClick={() => setAnnual(!annual)}
-              className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${annual ? "bg-green-500" : "bg-gray-300"}`}
+              className="relative inline-flex h-5 w-9 items-center rounded-full transition-colors"
+              style={{ backgroundColor: annual ? COPPER : "#d1d5db" }}
             >
               <span className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white shadow transition-transform ${annual ? "translate-x-[1.125rem]" : "translate-x-0.5"}`} />
             </button>
             <span className={`text-xs font-medium ${annual ? "text-gray-900" : "text-gray-400"}`}>Annual</span>
-            {annual && <span className="rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-semibold text-green-700">-20%</span>}
+            {annual && <span className="rounded-full px-2 py-0.5 text-[10px] font-semibold" style={{ backgroundColor: "rgba(183,110,91,0.1)", color: COPPER }}>-20%</span>}
           </div>
         </div>
         <div className="grid md:grid-cols-3 gap-3">
           {plans.map((p) => (
             <div
               key={p.name}
-              className={`rounded-xl p-5 border-2 relative ${
+              className={`rounded-xl p-5 relative ${
                 p.popular
-                  ? "border-green-500 bg-white shadow-md shadow-green-50"
-                  : "border-gray-100 bg-white"
+                  ? "bg-white shadow-md border-2"
+                  : "border-2 border-gray-100 bg-white"
               }`}
+              style={p.popular ? { borderColor: COPPER } : undefined}
             >
               {p.popular && (
-                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-green-500 text-white text-[10px] font-bold px-3 py-0.5 rounded-full">
+                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-white text-[10px] font-bold px-3 py-0.5 rounded-full" style={{ backgroundColor: COPPER }}>
                   Popular
                 </span>
               )}
@@ -251,7 +348,7 @@ function Pricing() {
               <ul className="mt-3 space-y-1.5">
                 {p.features.map((f) => (
                   <li key={f} className="flex items-center gap-2 text-xs text-gray-600">
-                    <svg className="w-3.5 h-3.5 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <svg className="w-3.5 h-3.5 shrink-0" style={{ color: COPPER }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                     {f}
@@ -262,11 +359,12 @@ function Pricing() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`mt-4 block text-center rounded-full py-2 text-sm font-semibold transition-colors ${
+                className={`mt-4 block text-center rounded-full py-2 text-sm font-semibold transition-opacity hover:opacity-90 ${
                   p.popular
-                    ? "bg-green-500 text-white hover:bg-green-600"
+                    ? "text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
+                style={p.popular ? { backgroundColor: COPPER } : undefined}
               >
                 Get Started
               </a>
@@ -282,8 +380,8 @@ function Pricing() {
 function Testimonials() {
   const quotes = [
     { name: "Sarah K.", role: "Etsy Seller", text: "I used to spend $50 per product photo at a studio. Now I get better results from my couch.", img: "https://randomuser.me/api/portraits/women/44.jpg" },
-    { name: "James R.", role: "Shopify Owner", text: "Conversion rate went up 35% after switching to SnapBot photos.", img: "https://randomuser.me/api/portraits/men/32.jpg" },
-    { name: "Priya M.", role: "Brand Manager", text: "200+ products a month. SnapBot saves us days of editing time.", img: "https://randomuser.me/api/portraits/women/63.jpg" },
+    { name: "James R.", role: "Shopify Owner", text: "Conversion rate went up 35% after switching to Booth photos.", img: "https://randomuser.me/api/portraits/men/32.jpg" },
+    { name: "Priya M.", role: "Brand Manager", text: "200+ products a month. Booth saves us days of editing time.", img: "https://randomuser.me/api/portraits/women/63.jpg" },
   ];
   return (
     <section className="py-10 px-6">
@@ -336,16 +434,17 @@ function FAQ() {
 
 function CTA() {
   return (
-    <section className="py-10 px-6 bg-green-500">
+    <section className="py-10 px-6" style={{ backgroundColor: COPPER }}>
       <div className="max-w-3xl mx-auto text-center text-white">
         <h2 className="text-2xl font-bold">Start with 10 Free Photos</h2>
-        <p className="mt-2 text-green-100 text-sm">No credit card. No commitment. Just send a photo.</p>
+        <p className="mt-2 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>No credit card. No commitment. Just send a photo.</p>
         <div className="mt-5">
           <a
             href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-white text-green-600 px-6 py-2.5 font-semibold text-sm hover:bg-green-50 transition-colors"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-2.5 font-semibold text-sm hover:bg-gray-50 transition-colors"
+            style={{ color: COPPER }}
           >
             <WhatsAppIcon className="w-4 h-4" />
             Get Started on WhatsApp
@@ -360,10 +459,8 @@ function Footer() {
   return (
     <footer className="py-6 px-6 border-t border-gray-100">
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
-        <span className="font-semibold text-gray-500">
-          snap<span className="text-green-500">bot</span>
-        </span>
-        <span>&copy; {new Date().getFullYear()} SnapBot</span>
+        <span className="font-semibold text-gray-500">booth</span>
+        <span>&copy; {new Date().getFullYear()} Booth · trybooth.ai</span>
         <div className="flex gap-4">
           <a href="#" className="hover:text-gray-600">Privacy</a>
           <a href="#" className="hover:text-gray-600">Terms</a>
@@ -379,6 +476,7 @@ export default function Home() {
     <main className="bg-white text-gray-900">
       <Nav />
       <Hero />
+      <PainOfStatusQuo />
       <HowItWorks />
       <ProductTypes />
       <Features />
