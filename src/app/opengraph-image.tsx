@@ -34,7 +34,7 @@ export default async function Image() {
               width: "48px",
               height: "48px",
               borderRadius: "12px",
-              backgroundColor: "#B76E5B",
+              backgroundColor: "#22c55e",
             }}
           />
           <span
@@ -60,7 +60,7 @@ export default async function Image() {
         >
           Kill Expensive
           <br />
-          <span style={{ color: "#B76E5B" }}>Photo Shoots</span>
+          <span style={{ color: "#22c55e" }}>Photo Shoots</span>
         </div>
         <div
           style={{

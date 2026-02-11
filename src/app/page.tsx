@@ -182,7 +182,7 @@ function PainOfStatusQuo() {
                 <span className="text-sm text-gray-700">Studio-quality photo in 30 seconds</span>
               </div>
             </div>
-            <div className="mt-4 pt-3 border-t flex items-center justify-between" style={{ borderColor: "rgba(183,110,91,0.2)" }}>
+            <div className="mt-4 pt-3 border-t border-green-200 flex items-center justify-between">
               <span className="text-sm font-bold text-gray-900">Cost per photo</span>
               <span className="text-sm font-bold text-green-500">~$0.50 &middot; 30 seconds</span>
             </div>
@@ -310,8 +310,7 @@ function Pricing() {
             <span className={`text-xs font-medium ${!annual ? "text-gray-900" : "text-gray-400"}`}>Monthly</span>
             <button
               onClick={() => setAnnual(!annual)}
-              className="relative inline-flex h-5 w-9 items-center rounded-full transition-colors"
-              className={annual ? "bg-green-500" : "bg-gray-300"}
+              className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${annual ? "bg-green-500" : "bg-gray-300"}`}
             >
               <span className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white shadow transition-transform ${annual ? "translate-x-[1.125rem]" : "translate-x-0.5"}`} />
             </button>
@@ -325,10 +324,9 @@ function Pricing() {
               key={p.name}
               className={`rounded-xl p-5 relative ${
                 p.popular
-                  ? "bg-white shadow-md border-2"
+                  ? "border-2 border-green-500 bg-white shadow-md shadow-green-50"
                   : "border-2 border-gray-100 bg-white"
               }`}
-              className={p.popular ? "border-green-500 bg-white shadow-md shadow-green-50" : ""}
             >
               {p.popular && (
                 <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-white text-[10px] font-bold px-3 py-0.5 rounded-full bg-green-500">
@@ -359,10 +357,9 @@ function Pricing() {
                 rel="noopener noreferrer"
                 className={`mt-4 block text-center rounded-full py-2 text-sm font-semibold transition-opacity hover:opacity-90 ${
                   p.popular
-                    ? "text-white"
+                    ? "bg-green-500 text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
-                className={p.popular ? "bg-green-500" : "bg-gray-800"}
               >
                 Get Started
               </a>
