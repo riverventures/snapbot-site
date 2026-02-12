@@ -96,7 +96,7 @@ function Hero() {
             10 free photos · No credit card
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 leading-[1.1]">
-            Kill Expensive
+            Skip Expensive
             <br />
             <span className="text-green-500">Photo Shoots</span>
           </h1>

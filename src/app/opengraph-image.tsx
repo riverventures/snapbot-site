@@ -58,7 +58,7 @@ export default async function Image() {
             marginBottom: "24px",
           }}
         >
-          Kill Expensive
+          Skip Expensive
           <br />
           <span style={{ color: "#22c55e" }}>Photo Shoots</span>
         </div>
